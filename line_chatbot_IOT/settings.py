@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from line_chatbot_IOT.line_conf import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,6 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%&#2fxrks5#n10e9=&b&ow%7%i8uj2s*pr5i^&+e-=j(cqglq1'
+LINE_CHANNEL_ACCESS_TOKEN= str_LINE_CHANNEL_ACCESS_TOKEN
+LINE_CHANNEL_SECRET = str_LINE_CHANNEL_SECRET
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
