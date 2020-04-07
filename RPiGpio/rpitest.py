@@ -14,5 +14,21 @@ class RpiConsumer(WebsocketConsumer):
         pass
 
     def receive(self, text_data):
-        pass
+        
+        text_data_json = json.loads(text_data)
 
+        message = text_data_json['message']
+
+        if message != "get gpio":
+            message = "No echo"
+
+            self.send(text_data=json.dumps
+                    ({
+                        'message' : message,
+                }))
+        else:
+            data = list(RPiGpio_model.objects.values_list('cPinNum','cGPIO_Value'))
+
+            self.send(text_data=json.dumps({
+                'message' : data,
+                }))
